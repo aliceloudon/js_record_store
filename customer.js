@@ -25,6 +25,14 @@ Customer.prototype = {
     this.cash = this.cash + record.price
   },
 
+  getValueOfCollection: function() {
+    var valueOfCollection = 0
+    this.records.forEach(function(record){
+      valueOfCollection = valueOfCollection + record.price
+    })
+    return valueOfCollection
+  }
+
 }
 
 module.exports = Customer

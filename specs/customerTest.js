@@ -54,4 +54,11 @@ describe('customer', function(){
     assert.strictEqual(customer.buyRecord(record), 'Sorry, customer has insufficient funds')
   })
 
+  it('can view total value of collection', function(){
+    customer.getCash()
+    customer.buyRecord(record)
+    customer.buyRecord(record2)
+    assert.strictEqual(customer.getValueOfCollection(), 2700)
+  })
+
 })
