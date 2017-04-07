@@ -12,6 +12,7 @@ describe ('record store', function(){
     recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco')
     record = new Record('The Beatles', 'Abbey Road', 'Rock/Pop', 1500)
     record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
+    record3 = new Record('Stevie Wonder', 'Greatest Hits', 'Soul', 1100)
   })
 
   it('has name', function(){
@@ -52,6 +53,14 @@ describe ('record store', function(){
     recordStore.addRecord(record2)
     recordStore.sellRecord(record)
     assert.strictEqual(recordStore.balance, 1500)
+  })
+
+  it('can report financial position', function(){
+    recordStore.addRecord(record)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    recordStore.sellRecord(record)
+    assert.strictEqual(recordStore.reportFinancialPosition(), 'Inventory value: 2300, Sales: 1500')
   })
 
 })

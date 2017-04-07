@@ -23,6 +23,14 @@ RecordStore.prototype = {
       stringToReturn += record.printPropertiesAsString()
     })
     return stringToReturn
+  },
+
+  reportFinancialPosition: function(){
+    var inventoryValue = 0
+    this.inventory.forEach(function(record){
+      inventoryValue = inventoryValue + record.price
+    })
+    return 'Inventory value: ' + inventoryValue + ', Sales: ' + this.balance
   }
 
 }
