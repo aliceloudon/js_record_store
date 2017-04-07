@@ -5,6 +5,10 @@ var Customer = function(){
 
 Customer.prototype = {
 
+  buyRecord: function(record){
+    this.records.push(record)
+  }
+
 }
 
 module.exports = Customer
