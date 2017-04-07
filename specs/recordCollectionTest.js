@@ -23,9 +23,9 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.inventory.length, 0)
   })
 
-  // it('starts with a balance of zero', function(){
-  //   assert.strictEqual(recordStore.balance, 0)
-  // })
+  it('starts with a balance of zero', function(){
+    assert.strictEqual(recordCollection.balance, 0)
+  })
 
   // it('can add record to inventory', function(){
   //   recordStore.addRecord(record)
