@@ -50,4 +50,8 @@ describe('customer', function(){
     assert.strictEqual(customer.cash, 3800)
   })
 
+  it('cannot buy a record if there are insufficient funds', function(){
+    assert.strictEqual(customer.buyRecord(record), 'Sorry, customer has insufficient funds')
+  })
+
 })
