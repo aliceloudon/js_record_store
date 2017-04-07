@@ -5,9 +5,18 @@ var Customer = function(){
 
 Customer.prototype = {
 
+  getCash: function(){
+    this.cash = 5000
+  },
+
   buyRecord: function(record){
-    this.records.push(record)
-    this.cash = this.cash - record.price
+    if (this.cash >= record.price){
+      this.records.push(record)
+      this.cash = this.cash - record.price
+    }
+    else {
+      return 'Sorry, customer has insufficient funds'
+    }
   },
 
   sellRecord: function(record){
