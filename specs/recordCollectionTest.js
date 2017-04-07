@@ -46,10 +46,10 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.cashBalance, 5000)
   })
 
-  // it('can print out inventory list', function(){
-  //   recordCollection.addRecord(record)
-  //   assert.strictEqual(recordCollection.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. ')
-  // })
+  it('can list inventory as string', function(){
+    recordCollection.addRecord(record)
+    assert.strictEqual(recordCollection.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. ')
+  })
 
   // it('can remove record from inventory', function(){
   //   recordCollection.addRecord(record)
