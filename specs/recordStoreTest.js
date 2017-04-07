@@ -6,15 +6,15 @@ var RecordCollection = require ('../recordCollection.js')
 describe ('record store', function(){
 
   var recordStore
-  var record
-  var record2
+  // var record
+  // var record2
 
   beforeEach(function(){
     recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco')
-    record = new Record('The Beatles', 'Abbey Road', 'Rock', 1500)
-    record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
-    record3 = new Record('Stevie Wonder', 'Greatest Hits', 'Soul', 1100)
-    record4 = new Record('Stevie Wonder', 'Talking Book', 'Soul', 1000)
+    // record = new Record('The Beatles', 'Abbey Road', 'Rock', 1500)
+    // record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
+    // record3 = new Record('Stevie Wonder', 'Greatest Hits', 'Soul', 1100)
+    // record4 = new Record('Stevie Wonder', 'Talking Book', 'Soul', 1000)
   })
 
   it('has name', function(){
