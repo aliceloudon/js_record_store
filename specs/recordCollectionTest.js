@@ -41,6 +41,10 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.valueOfCollection, 1500)
   })
 
+  it('can add record to inventory and cash balance goes down', function(){
+    recordCollection.addRecord(record)
+    assert.strictEqual(recordCollection.cashBalance, 3500)
+  })
 
   // it('can print out inventory list', function(){
   //   recordCollection.addRecord(record)

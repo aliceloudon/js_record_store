@@ -9,6 +9,7 @@ RecordCollection.prototype = {
   addRecord: function(record){
     this.inventory.push(record)
     this.valueOfCollection = this.valueOfCollection + record.price
+    this.cashBalance = this.cashBalance - record.price
   },
 
   removeRecord: function(record){
