@@ -6,10 +6,12 @@ describe('customer', function(){
 
   var customer
   var record
+  var record2
 
   beforeEach(function(){
     customer = new Customer()
     record = new Record('The Beatles', 'Abbey Road', 'Rock/Pop', 1500)
+    record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
   })
 
   it('has starting cash balance of zero', function(){
@@ -20,8 +22,15 @@ describe('customer', function(){
     assert.strictEqual(customer.records.length, 0)
   })
 
-  it('can buy records', function(){
+  it('can buy record', function(){
     customer.buyRecord(record)
+    assert.strictEqual(customer.records.length, 1)
+  })
+
+  it('can sell record', function(){
+    customer.buyRecord(record)
+    customer.buyRecord(record2)
+    customer.sellRecord(record)
     assert.strictEqual(customer.records.length, 1)
   })
 
