@@ -7,6 +7,7 @@ Customer.prototype = {
 
   buyRecord: function(record){
     this.records.push(record)
+    this.cash = this.cash - record.price
   },
 
   sellRecord: function(record){
