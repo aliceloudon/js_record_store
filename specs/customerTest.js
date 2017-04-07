@@ -39,11 +39,11 @@ describe('customer', function(){
     assert.strictEqual(customer.records.length, 1)
   })
 
-  // it('can sell record and cash goes up', function(){
-  //   customer.buyRecord(record)
-  //   customer.buyRecord(record2)
-  //   customer.sellRecord(record)
-  //   assert.strictEqual(customer.cash, 1500)
-  // })
+  it('can sell record and cash goes up', function(){
+    customer.buyRecord(record)
+    customer.buyRecord(record2)
+    customer.sellRecord(record)
+    assert.strictEqual(customer.cash, -1200)
+  })
 
 })
