@@ -44,9 +44,34 @@ RecordCollection.prototype = {
       }
     })
     return stringToReturn
-  }
+  },
   // IMPROVE THIS BY USING FILTER ENUMERABLE. ALSO, CHANGE GENRE TO LOWERCASE.
 
+  totalValue: function(genre){
+    if (genre === undefined){
+      this.valueOfCollection
+    }
+    else {
+      this.inventory.forEach(function(record){
+        if (record.genre !== genre){
+          this.valueOfCollection -= record.price
+        }
+      })
+    }
+    return this.valueOfCollection
+  },
+
+  // getValueOfCollection: function(genre) {
+  //   var valueOfCollection = 0
+  //     if (genre === undefined){
+  //       this.records.forEach(function(record){
+  //         valueOfCollection = valueOfCollection + record.price
+  //       })
+  //     } else {
+
+  //     }
+  //   return valueOfCollection
+  // }
 }
 
 module.exports = RecordCollection

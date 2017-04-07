@@ -70,5 +70,18 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.findRecordsByGenre('Soul'), 'Artist: Marvin Gaye, Title: Greatest Hits, Genre: Soul, Price: 1100. Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. ' )
   })
 
+  it('can view total value of collection, regardless of genre', function(){
+    recordCollection.addRecord(record)
+    recordCollection.addRecord(record2)
+    assert.strictEqual(recordCollection.totalValue(), 2700)
+  })
+
+  // it('can view total balance of all records of a given genre', function(){
+  //   recordCollection.addRecord(record2)
+  //   recordCollection.addRecord(record3)
+  //   recordCollection.addRecord(record4)
+  //   assert.strictEqual()
+  // })
+
 })
 

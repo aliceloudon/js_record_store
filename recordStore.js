@@ -8,8 +8,6 @@ var RecordStore = function(name, city){
 
 RecordStore.prototype = {
 
-
-
 }
 
 module.exports = RecordStore
