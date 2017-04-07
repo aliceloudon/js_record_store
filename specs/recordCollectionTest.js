@@ -15,7 +15,7 @@ describe ('record collection', function(){
     recordCollection = new RecordCollection()
     record = new Record('The Beatles', 'Abbey Road', 'Rock', 1500)
     record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
-    record3 = new Record('Stevie Wonder', 'Greatest Hits', 'Soul', 1100)
+    record3 = new Record('Marvin Gaye', 'Greatest Hits', 'Soul', 1100)
     record4 = new Record('Stevie Wonder', 'Talking Book', 'Soul', 1000)
   })
 
@@ -58,13 +58,12 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.reportFinancialPosition(), 'Value of Collection: 2700, Cash Balance: 2300')
   })
 
-  // it('can view all records of given genre', function(){
-  //   recordStore.addRecord(record)
-  //   recordStore.addRecord(record4)
-  //   recordStore.addRecord(record2)
-  //   recordStore.addRecord(record3)
-  //   assert.strictEqual(recordStore.findByGenre('Soul'), 'Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. Artist: Stevie Wonder, Title: Greatest Hits, Genre: Soul, Price: 1100. ' )
-  // })
+  it('can view all records of given genre', function(){
+    recordCollection.addRecord(record2)
+    recordCollection.addRecord(record3)
+    recordCollection.addRecord(record4)
+    assert.strictEqual(recordCollection.findRecordsByGenre('Soul'), 'Artist: Marvin Gaye, Title: Greatest Hits, Genre: Soul, Price: 1100. Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. ' )
+  })
 
 })
 

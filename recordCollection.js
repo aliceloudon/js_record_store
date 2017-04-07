@@ -31,6 +31,17 @@ RecordCollection.prototype = {
     return 'Value of Collection: ' + this.valueOfCollection + ', Cash Balance: ' + this.cashBalance
   },
 
+  findRecordsByGenre: function(genre){
+    var stringToReturn = ''
+    this.inventory.forEach(function(record){
+      if (record.genre === genre){
+        stringToReturn += record.printPropertiesAsString()
+      }
+    })
+    return stringToReturn
+  }
+  // IMPROVE THIS BY USING FILTER ENUMERABLE. ALSO, CHANGE GENRE TO LOWERCASE.
+
 }
 
 module.exports = RecordCollection
