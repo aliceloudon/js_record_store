@@ -21,4 +21,8 @@ describe ('record store', function(){
     assert.strictEqual(recordStore.inventory.length, 0)
   })
 
+  it('starts with a balance of zero', function(){
+    assert.strictEqual(recordStore.balance, 0)
+  })
+
 })
