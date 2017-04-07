@@ -7,16 +7,21 @@ var RecordCollection = function(){
 RecordCollection.prototype = {
 
   addRecord: function(record){
-    this.inventory.push(record)
-    this.valueOfCollection = this.valueOfCollection + record.price
-    this.cashBalance = this.cashBalance - record.price
+    if (this.cashBalance >= record.price) {
+      this.inventory.push(record)
+      this.valueOfCollection += record.price
+      this.cashBalance -= record.price
+    }
+    else {
+      return 'Sorry, there are insufficient funds available'
+    }
   },
 
   removeRecord: function(record){
     var index = this.inventory.indexOf(record)
     this.inventory.splice(index, 1)
-    this.valueOfCollection = this.valueOfCollection - record.price
-    this.cashBalance = this.cashBalance + record.price
+    this.valueOfCollection -= record.price
+    this.cashBalance += record.price
   },
 
   listInventory: function(){

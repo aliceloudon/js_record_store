@@ -17,6 +17,7 @@ describe ('record collection', function(){
     record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
     record3 = new Record('Marvin Gaye', 'Greatest Hits', 'Soul', 1100)
     record4 = new Record('Stevie Wonder', 'Talking Book', 'Soul', 1000)
+    record5 = new Record('Paul Simon', 'Call Me Al', 'Pop', 6000)
   })
 
   it('starts with zero inventory', function(){
@@ -36,6 +37,10 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.inventory.length, 1)
     assert.strictEqual(recordCollection.valueOfCollection, 1500)
     assert.strictEqual(recordCollection.cashBalance, 3500)
+  })
+
+  it('cannot add record to inventory with insufficient funds', function(){
+    assert.strictEqual(recordCollection.addRecord(record5), 'Sorry, there are insufficient funds available')
   })
 
   it('can remove record from inventory', function(){

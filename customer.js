@@ -1,13 +1,9 @@
 var Customer = function(){
-  this.cash = 0
-  this.records = new RecordCollection()
+  this.recordCollection = new RecordCollection
 }
 
 Customer.prototype = {
 
-  getCash: function(){
-    this.cash = 5000
-  },
 
   // buyRecord: function(record){
   //   if (this.cash >= record.price){
