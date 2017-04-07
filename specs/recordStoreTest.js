@@ -13,6 +13,7 @@ describe ('record store', function(){
     record = new Record('The Beatles', 'Abbey Road', 'Rock/Pop', 1500)
     record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
     record3 = new Record('Stevie Wonder', 'Greatest Hits', 'Soul', 1100)
+    record4 = new Record('Stevie Wonder', 'Talking Book', 'Soul', 1000)
   })
 
   it('has name', function(){
@@ -38,7 +39,7 @@ describe ('record store', function(){
 
   it('can print out inventory list', function(){
     recordStore.addRecord(record)
-    assert.strictEqual(recordStore.listInventory(), 'artist: The Beatles, title: Abbey Road, genre: Rock/Pop, price: 1500')
+    assert.strictEqual(recordStore.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock/Pop, Price: 1500. ')
   })
 
   it('can remove record from inventory', function(){
@@ -65,9 +66,10 @@ describe ('record store', function(){
 
   it('can view all records of given genre', function(){
     recordStore.addRecord(record)
+    recordStore.addRecord(record4)
     recordStore.addRecord(record2)
     recordStore.addRecord(record3)
-    assert.strictEqual(recordStore.findByGenre('Soul'), 'artist: Stevie Wonder, title: Greatest Hits, genre: Soul, price: 1100')
+    assert.strictEqual(recordStore.findByGenre('Soul'), 'Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. Artist: Stevie Wonder, Title: Greatest Hits, Genre: Soul, Price: 1100. ' )
   })
 
 })

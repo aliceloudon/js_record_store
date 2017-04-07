@@ -26,7 +26,7 @@ describe ('record', function(){
   })
 
   it('can print out record properties as a string', function(){
-    assert.strictEqual(record.printPropertiesAsString(), 'artist: The Beatles, title: Abbey Road, genre: Rock/Pop, price: 1500')
+    assert.strictEqual(record.printPropertiesAsString(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock/Pop, Price: 1500. ')
   })
 
 })
