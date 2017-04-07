@@ -48,30 +48,15 @@ describe ('record collection', function(){
 
   it('can list inventory as string', function(){
     recordCollection.addRecord(record)
-    assert.strictEqual(recordCollection.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. ')
+    recordCollection.addRecord(record2)
+    assert.strictEqual(recordCollection.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. Artist: Queen, Title: Bohemian Rhapsody, Genre: Rock, Price: 1200. ')
   })
 
-  // it('can remove record from inventory', function(){
-  //   recordCollection.addRecord(record)
-  //   recordCollection.addRecord(record2)
-  //   recordCollection.removeRecord(record)
-  //   assert.strictEqual(recordCollection.inventory.length, 1)
-  // })
-
-  // it('can remove record from inventory and store balance goes up', function(){
-  //   recordStore.addRecord(record)
-  //   recordStore.addRecord(record2)
-  //   recordStore.sellRecord(record)
-  //   assert.strictEqual(recordStore.balance, 1500)
-  // })
-
-  // it('can report financial position', function(){
-  //   recordStore.addRecord(record)
-  //   recordStore.addRecord(record2)
-  //   recordStore.addRecord(record3)
-  //   recordStore.sellRecord(record)
-  //   assert.strictEqual(recordStore.reportFinancialPosition(), 'Inventory value: 2300, Sales: 1500')
-  // })
+  it('can report financial position', function(){
+    recordCollection.addRecord(record)
+    recordCollection.addRecord(record2)
+    assert.strictEqual(recordCollection.reportFinancialPosition(), 'Value of Collection: 2700, Cash Balance: 2300')
+  })
 
   // it('can view all records of given genre', function(){
   //   recordStore.addRecord(record)

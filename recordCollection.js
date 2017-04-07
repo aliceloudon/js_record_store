@@ -27,6 +27,10 @@ RecordCollection.prototype = {
     return stringToReturn
   },
 
+  reportFinancialPosition: function(){
+    return 'Value of Collection: ' + this.valueOfCollection + ', Cash Balance: ' + this.cashBalance
+  },
+
 }
 
 module.exports = RecordCollection
