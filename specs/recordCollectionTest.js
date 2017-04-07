@@ -34,16 +34,16 @@ describe ('record collection', function(){
   it('can add record to inventory', function(){
     recordCollection.addRecord(record)
     assert.strictEqual(recordCollection.inventory.length, 1)
-  })
-
-  it('can add record to inventory and value of collection goes up', function(){
-    recordCollection.addRecord(record)
     assert.strictEqual(recordCollection.valueOfCollection, 1500)
+    assert.strictEqual(recordCollection.cashBalance, 3500)
   })
 
-  it('can add record to inventory and cash balance goes down', function(){
+  it('can remove record from inventory', function(){
     recordCollection.addRecord(record)
-    assert.strictEqual(recordCollection.cashBalance, 3500)
+    recordCollection.removeRecord(record)
+    assert.strictEqual(recordCollection.inventory.length, 0)
+    assert.strictEqual(recordCollection.valueOfCollection, 0)
+    assert.strictEqual(recordCollection.cashBalance, 5000)
   })
 
   // it('can print out inventory list', function(){

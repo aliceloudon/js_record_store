@@ -15,7 +15,8 @@ RecordCollection.prototype = {
   removeRecord: function(record){
     var index = this.inventory.indexOf(record)
     this.inventory.splice(index, 1)
-    this.balance = this.balance + record.price
+    this.valueOfCollection = this.valueOfCollection - record.price
+    this.cashBalance = this.cashBalance + record.price
   },
 
   listInventory: function(){
