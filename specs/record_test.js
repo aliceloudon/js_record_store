@@ -13,4 +13,8 @@ describe ('record', function(){
     assert.strictEqual(record.artist ,'The Beatles')
   })
 
+  it('has title', function(){
+    assert.strictEqual(record.title, 'Abbey Road')
+  })
+
 })
