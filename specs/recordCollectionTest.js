@@ -23,25 +23,35 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.inventory.length, 0)
   })
 
-  it('starts with a balance of zero', function(){
-    assert.strictEqual(recordCollection.balance, 0)
+  it('starts with a cash balance of 5000', function(){
+    assert.strictEqual(recordCollection.cashBalance, 5000)
   })
 
-  // it('can add record to inventory', function(){
-  //   recordStore.addRecord(record)
-  //   assert.strictEqual(recordStore.inventory.length, 1)
-  // })
+  it('starts with a value of collection of 0', function(){
+    assert.strictEqual(recordCollection.valueOfCollection, 0)
+  })
+
+  it('can add record to inventory', function(){
+    recordCollection.addRecord(record)
+    assert.strictEqual(recordCollection.inventory.length, 1)
+  })
+
+  it('can add record to inventory and value of collection goes up', function(){
+    recordCollection.addRecord(record)
+    assert.strictEqual(recordCollection.valueOfCollection, 1500)
+  })
+
 
   // it('can print out inventory list', function(){
-  //   recordStore.addRecord(record)
-  //   assert.strictEqual(recordStore.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. ')
+  //   recordCollection.addRecord(record)
+  //   assert.strictEqual(recordCollection.listInventory(), 'Artist: The Beatles, Title: Abbey Road, Genre: Rock, Price: 1500. ')
   // })
 
   // it('can remove record from inventory', function(){
-  //   recordStore.addRecord(record)
-  //   recordStore.addRecord(record2)
-  //   recordStore.sellRecord(record)
-  //   assert.strictEqual(recordStore.inventory.length, 1)
+  //   recordCollection.addRecord(record)
+  //   recordCollection.addRecord(record2)
+  //   recordCollection.removeRecord(record)
+  //   assert.strictEqual(recordCollection.inventory.length, 1)
   // })
 
   // it('can remove record from inventory and store balance goes up', function(){
