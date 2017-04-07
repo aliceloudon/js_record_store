@@ -63,4 +63,12 @@ describe ('record store', function(){
     assert.strictEqual(recordStore.reportFinancialPosition(), 'Inventory value: 2300, Sales: 1500')
   })
 
+  it('can view all records of given genre', function(){
+    recordStore.addRecord(record)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    assert.strictEqual(recordStore.findByGenre('Soul'), 'artist: Stevie Wonder, title: Greatest Hits, genre: Soul, price: 1100')
+  })
+
 })
+

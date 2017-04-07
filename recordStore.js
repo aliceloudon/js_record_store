@@ -31,6 +31,16 @@ RecordStore.prototype = {
       inventoryValue = inventoryValue + record.price
     })
     return 'Inventory value: ' + inventoryValue + ', Sales: ' + this.balance
+  },
+
+  findByGenre: function(genre){
+    var stringToReturn = ''
+    this.inventory.forEach(function(record){
+      if (record.genre === genre){
+        stringToReturn += record.printPropertiesAsString()
+      }
+    })
+    return stringToReturn
   }
 
 }
