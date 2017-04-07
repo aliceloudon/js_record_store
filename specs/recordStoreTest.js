@@ -6,10 +6,12 @@ describe ('record store', function(){
 
   var recordStore
   var record
+  var record2
 
   beforeEach(function(){
     recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco')
     record = new Record('The Beatles', 'Abbey Road', 'Rock/Pop', 1500)
+    record2 = new Record('Queen', 'Bohemian Rhapsody', 'Rock', 1200)
   })
 
   it('has name', function(){
@@ -29,13 +31,20 @@ describe ('record store', function(){
   })
 
   it('can add record to inventory', function(){
-    recordStore.addRecordToInventory(record)
+    recordStore.addRecord(record)
     assert.strictEqual(recordStore.inventory.length, 1)
   })
 
   it('can print out inventory list', function(){
-    recordStore.addRecordToInventory(record)
+    recordStore.addRecord(record)
     assert.strictEqual(recordStore.listInventory(), 'artist: The Beatles, title: Abbey Road, genre: Rock/Pop, price: 1500')
+  })
+
+  it('can remove record from inventory', function(){
+    recordStore.addRecord(record)
+    recordStore.addRecord(record2)
+    recordStore.sellRecord(record)
+    assert.strictEqual(recordStore.inventory.length, 1)
   })
 
 })

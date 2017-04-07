@@ -7,8 +7,13 @@ var RecordStore = function(name, city){
 
 RecordStore.prototype = {
 
-  addRecordToInventory: function(record){
+  addRecord: function(record){
     this.inventory.push(record)
+  },
+
+  sellRecord: function(record){
+    var index = this.inventory.indexOf(record)
+    this.inventory.splice(index, 1)
   },
 
   listInventory: function(){
