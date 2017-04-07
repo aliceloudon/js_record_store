@@ -42,11 +42,8 @@ RecordStore.prototype = {
     })
     return stringToReturn
   }
+  // IMPROVE THIS BY USING FILTER ENUMERABLE
 
 }
 
 module.exports = RecordStore
-
-
-
-// record.printPropertiesAsString()
