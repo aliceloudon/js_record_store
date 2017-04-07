@@ -6,11 +6,15 @@ describe ('record store', function(){
   var recordStore
 
   beforeEach(function(){
-    recordStore = new RecordStore("Rooky Ricardo's Records", "San Francisco")
+    recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco')
   })
 
   it('has name', function(){
     assert.strictEqual(recordStore.name ,"Rooky Ricardo's Records")
+  })
+
+  it('has city', function(){
+    assert.strictEqual(recordStore.city, 'San Francisco')
   })
 
 })
