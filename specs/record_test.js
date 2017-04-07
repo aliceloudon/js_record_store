@@ -17,4 +17,8 @@ describe ('record', function(){
     assert.strictEqual(record.title, 'Abbey Road')
   })
 
+  it('has genre', function(){
+    assert.strictEqual(record.genre, 'Rock/Pop')
+  })
+
 })
