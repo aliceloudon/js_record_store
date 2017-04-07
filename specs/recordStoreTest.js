@@ -33,4 +33,9 @@ describe ('record store', function(){
     assert.strictEqual(recordStore.inventory.length, 1)
   })
 
+  it('can print out inventory list', function(){
+    recordStore.addRecordToInventory(record)
+    assert.strictEqual(recordStore.listInventory(), 'artist: The Beatles, title: Abbey Road, genre: Rock/Pop, price: 1500')
+  })
+
 })
