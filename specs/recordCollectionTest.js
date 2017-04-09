@@ -88,17 +88,20 @@ describe ('record collection', function(){
     recordCollection.addRecord(record)
     recordCollection.addRecord(record3)
     recordCollection.addRecord(record2)
+    recordCollection.addRecord(record4)
     recordCollection.sortInventoryByValue()
-    assert.strictEqual(recordCollection.inventory[0], record3)
+    assert.strictEqual(recordCollection.inventory[0], record4)
   })
 
-  // it('can show most valuable record', function(){
-  //   recordCollection.addRecord(record)
-  //   recordCollection.addRecord(record2)
-  //   recordCollection.addRecord(record3)
-  //   recordCollection.addRecord(record4)
-  //   recordCollection.addRecord(record5)
-  //   assert.strictEqual(recordCollection.findMostValuable(), 'Artist: Paul Simon, Title: Call Me Al, Genre: Pop, Price: 6000. ')
-  // })
+  it('can show most valuable record', function(){
+    recordCollection.addRecord(record)
+    recordCollection.addRecord(record3)
+    recordCollection.addRecord(record2)
+    recordCollection.addRecord(record4)
+    recordCollection.sortInventoryByValue()
+    assert.strictEqual(recordCollection.inventory[recordCollection.inventory.length - 1], record)
+  })
+
+  // SPENT AGES TRYING TO WORK OUT WHY IT WASN'T ADDING RECORD 5 TO MY SORTED ARRAY... IT CAN'T BUY RECORD 5... NOT ENOUGH CASH!
 
 })

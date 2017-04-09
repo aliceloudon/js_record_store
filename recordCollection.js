@@ -58,11 +58,7 @@ RecordCollection.prototype = {
     this.inventory.sort(function (a, b){
       return a.price - b.price
     })
-  }
-
-  // findMostValuable: function(){
-
-  // },
+  },
 
 }
 
