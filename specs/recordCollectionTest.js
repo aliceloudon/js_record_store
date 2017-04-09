@@ -10,6 +10,7 @@ describe ('record collection', function(){
   var record2
   var record3
   var record4
+  var record5
 
   beforeEach(function(){
     recordCollection = new RecordCollection()
@@ -76,13 +77,13 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.totalValueOfInventory(), 2700)
   })
 
-  // it('can view total value of collection, filtered for genre', function(){
-  //   recordCollection.addRecord(record)
-  //   recordCollection.addRecord(record2)
-  //   recordCollection.addRecord(record3)
-  //   recordCollection.addRecord(record4)
-  //   recordCollection.addRecord(record5)
-  //   assert.strictEqual(recordCollection.totalValue('Rock'), 2700)
-  // })
+  it('can view total value of collection, filtered for genre', function(){
+    recordCollection.addRecord(record)
+    recordCollection.addRecord(record2)
+    recordCollection.addRecord(record3)
+    recordCollection.addRecord(record4)
+    recordCollection.addRecord(record5)
+    assert.strictEqual(recordCollection.totalValueOfInventory('Rock'), 2700)
+  })
 
 })

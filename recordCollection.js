@@ -46,8 +46,12 @@ RecordCollection.prototype = {
   },
 
   totalValueOfInventory: function(genre){
-    this.filterInventory(genre)
-    return this.valueOfCollection
+    var totalValue = 0
+    var newArray = this.filterInventory(genre)
+    newArray.forEach(function(record){
+      totalValue += record.price
+    })
+    return totalValue
   }
 
   // totalValue: function(genre){
