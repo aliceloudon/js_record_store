@@ -31,4 +31,3 @@ describe ('record store', function(){
   })
 
 })
-
