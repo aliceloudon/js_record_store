@@ -6,9 +6,10 @@ var RecordCollection = require ('../recordCollection.js')
 describe ('record store', function(){
 
   var recordStore
+  var recordCollection
 
   beforeEach(function(){
-    recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco')
+    recordStore = new RecordStore("Rooky Ricardo's Records", 'San Francisco', recordCollection)
   })
 
   it('has name', function(){
@@ -17,6 +18,10 @@ describe ('record store', function(){
 
   it('has city', function(){
     assert.strictEqual(recordStore.city, 'San Francisco')
+  })
+
+  it('has recordCollection of zero at start', function(){
+    assert.strictEqual(recordStore.recordCollection.inventory.length, 0)
   })
 
 })
