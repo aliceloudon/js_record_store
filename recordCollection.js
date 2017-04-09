@@ -52,29 +52,17 @@ RecordCollection.prototype = {
       totalValue += record.price
     })
     return totalValue
+  },
+
+  sortInventoryByValue: function(){
+    this.inventory.sort(function (a, b){
+      return a.price - b.price
+    })
   }
 
-  // totalValue: function(genre){
-  //   if (genre === undefined){
-  //     return this.valueOfCollection
-  //   }
-  //   else {
+  // findMostValuable: function(){
 
-  //   }
-
-
-  //   if (genre !== undefined){
-
-  //     this.inventory.forEach(function(record){
-  //       if (record.genre !== genre){
-  //         return this.valueOfCollection -= record.price
-  //       }
-  //     })
-  //   } else {
-  //     return this.valueOfCollection  
-  //   }
-    
-  // }
+  // },
 
 }
 

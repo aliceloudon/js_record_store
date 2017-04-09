@@ -71,19 +71,34 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.filterInventory('Soul').length, 1)
   })
 
-  it('can view total value of collection', function(){
+  it('can show total value of collection', function(){
     recordCollection.addRecord(record)
     recordCollection.addRecord(record2)
     assert.strictEqual(recordCollection.totalValueOfInventory(), 2700)
   })
 
-  it('can view total value of collection, filtered for genre', function(){
-    recordCollection.addRecord(record)
+  it('can show total value of collection, filtered for genre', function(){
     recordCollection.addRecord(record2)
     recordCollection.addRecord(record3)
-    recordCollection.addRecord(record4)
-    recordCollection.addRecord(record5)
+    recordCollection.addRecord(record)
     assert.strictEqual(recordCollection.totalValueOfInventory('Rock'), 2700)
   })
+
+  it('can sort by price', function(){
+    recordCollection.addRecord(record)
+    recordCollection.addRecord(record3)
+    recordCollection.addRecord(record2)
+    recordCollection.sortInventoryByValue()
+    assert.strictEqual(recordCollection.inventory[0], record3)
+  })
+
+  // it('can show most valuable record', function(){
+  //   recordCollection.addRecord(record)
+  //   recordCollection.addRecord(record2)
+  //   recordCollection.addRecord(record3)
+  //   recordCollection.addRecord(record4)
+  //   recordCollection.addRecord(record5)
+  //   assert.strictEqual(recordCollection.findMostValuable(), 'Artist: Paul Simon, Title: Call Me Al, Genre: Pop, Price: 6000. ')
+  // })
 
 })
