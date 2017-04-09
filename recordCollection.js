@@ -1,3 +1,5 @@
+var _ = require('lodash')
+
 var RecordCollection = function(){
   this.inventory = []
   this.valueOfCollection = 0
@@ -36,42 +38,47 @@ RecordCollection.prototype = {
     return 'Value of Collection: ' + this.valueOfCollection + ', Cash Balance: ' + this.cashBalance
   },
 
-  findRecordsByGenre: function(genre){
-    var stringToReturn = ''
-    this.inventory.forEach(function(record){
-      if (record.genre === genre){
-        stringToReturn += record.printPropertiesAsString()
-      }
+  filterInventory: function(genre){
+    if(!genre) return this.inventory
+    return _.filter(this.inventory, function(record){
+      return record.genre === genre
     })
-    return stringToReturn
-  },
+  }
+
+
+  // findRecordsByGenre: function(genre){
+  //   var stringToReturn = ''
+  //   this.inventory.forEach(function(record){
+  //     if (record.genre === genre){
+  //       stringToReturn += record.printPropertiesAsString()
+  //     }
+  //   })
+  //   return stringToReturn
+  // },
   // IMPROVE THIS BY USING FILTER ENUMERABLE. ALSO, CHANGE GENRE TO LOWERCASE.
 
-  totalValue: function(genre){
-    if (genre === undefined){
-      this.valueOfCollection
-    }
-    else {
-      this.inventory.forEach(function(record){
-        if (record.genre !== genre){
-          this.valueOfCollection -= record.price
-        }
-      })
-    }
-    return this.valueOfCollection
-  },
+  // totalValue: function(genre){
+  //   if (genre === undefined){
+  //     return this.valueOfCollection
+  //   }
+  //   else {
 
-  // getValueOfCollection: function(genre) {
-  //   var valueOfCollection = 0
-  //     if (genre === undefined){
-  //       this.records.forEach(function(record){
-  //         valueOfCollection = valueOfCollection + record.price
-  //       })
-  //     } else {
+  //   }
 
-  //     }
-  //   return valueOfCollection
+
+  //   if (genre !== undefined){
+
+  //     this.inventory.forEach(function(record){
+  //       if (record.genre !== genre){
+  //         return this.valueOfCollection -= record.price
+  //       }
+  //     })
+  //   } else {
+  //     return this.valueOfCollection  
+  //   }
+    
   // }
+
 }
 
 module.exports = RecordCollection

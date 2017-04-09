@@ -63,25 +63,33 @@ describe ('record collection', function(){
     assert.strictEqual(recordCollection.reportFinancialPosition(), 'Value of Collection: 2700, Cash Balance: 2300')
   })
 
-  it('can view all records of given genre', function(){
-    recordCollection.addRecord(record2)
-    recordCollection.addRecord(record3)
-    recordCollection.addRecord(record4)
-    assert.strictEqual(recordCollection.findRecordsByGenre('Soul'), 'Artist: Marvin Gaye, Title: Greatest Hits, Genre: Soul, Price: 1100. Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. ' )
-  })
-
-  it('can view total value of collection, regardless of genre', function(){
+  it('can filter by genre', function(){
     recordCollection.addRecord(record)
     recordCollection.addRecord(record2)
-    assert.strictEqual(recordCollection.totalValue(), 2700)
+    recordCollection.addRecord(record3)
+    assert.strictEqual(recordCollection.filterInventory('Soul').length, 1)
   })
 
-  // it('can view total balance of all records of a given genre', function(){
+  // it('can view all records of given genre', function(){
   //   recordCollection.addRecord(record2)
   //   recordCollection.addRecord(record3)
   //   recordCollection.addRecord(record4)
-  //   assert.strictEqual()
+  //   assert.strictEqual(recordCollection.findRecordsByGenre('Soul'), 'Artist: Marvin Gaye, Title: Greatest Hits, Genre: Soul, Price: 1100. Artist: Stevie Wonder, Title: Talking Book, Genre: Soul, Price: 1000. ' )
+  // })
+
+  // it('can view total value of collection, regardless of genre', function(){
+  //   recordCollection.addRecord(record)
+  //   recordCollection.addRecord(record2)
+  //   assert.strictEqual(recordCollection.totalValue(), 2700)
+  // })
+
+  // it('can view total value of collection, filtered for genre', function(){
+  //   recordCollection.addRecord(record)
+  //   recordCollection.addRecord(record2)
+  //   recordCollection.addRecord(record3)
+  //   recordCollection.addRecord(record4)
+  //   recordCollection.addRecord(record5)
+  //   assert.strictEqual(recordCollection.totalValue('Rock'), 2700)
   // })
 
 })
-
