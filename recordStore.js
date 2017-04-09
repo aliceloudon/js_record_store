@@ -8,6 +8,9 @@ var RecordStore = function(name, city){
 
 RecordStore.prototype = {
 
+  reportFinancialPosition: function(){
+    return 'Value of Collection: ' + this.recordCollection.valueOfCollection + ', Cash Balance: ' + this.recordCollection.cashBalance
+  },
 }
 
 module.exports = RecordStore
