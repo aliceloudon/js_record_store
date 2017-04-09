@@ -54,9 +54,14 @@ RecordCollection.prototype = {
     return totalValue
   },
 
-  sortInventoryByValue: function(){
+  sortInventoryByValue: function(direction){
     this.inventory.sort(function (a, b){
-      return a.price - b.price
+      if (direction === 'ascending'){
+        return a.price - b.price
+      }
+      else {
+        return b.price - a.price
+      }
     })
   },
 

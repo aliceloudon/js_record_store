@@ -6,14 +6,21 @@ var RecordCollection = require ('../recordCollection.js')
 describe('customer', function(){
 
   var customer
+  var recordCollection
 
   beforeEach(function(){
-    customer = new Customer()
+    customer = new Customer(recordCollection)
+    record = new Record('The Clash', 'London Calling', 'Rock', 1000)
   })
 
-  // it('can buy a record', function(){
-  //   assert.strictEqual(customer.buyRecord(), 1)
-  // })
+  it('has a record collection of zero', function(){
+    assert.strictEqual(customer.recordCollection.inventory.length, 0)
+  })
+
+  it('can buy a record', function(){
+    customer.recordCollection.addRecord(record)
+    assert.strictEqual(customer.recordCollection.inventory.length, 1)
+  })
 
 })
 

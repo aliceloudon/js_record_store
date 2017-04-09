@@ -89,7 +89,7 @@ describe ('record collection', function(){
     recordCollection.addRecord(record3)
     recordCollection.addRecord(record2)
     recordCollection.addRecord(record4)
-    recordCollection.sortInventoryByValue()
+    recordCollection.sortInventoryByValue('ascending')
     assert.strictEqual(recordCollection.inventory[0], record4)
   })
 
@@ -98,7 +98,7 @@ describe ('record collection', function(){
     recordCollection.addRecord(record3)
     recordCollection.addRecord(record2)
     recordCollection.addRecord(record4)
-    recordCollection.sortInventoryByValue()
+    recordCollection.sortInventoryByValue('ascending')
     assert.strictEqual(recordCollection.inventory[recordCollection.inventory.length - 1], record)
   })
 
