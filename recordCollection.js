@@ -43,19 +43,12 @@ RecordCollection.prototype = {
     return _.filter(this.inventory, function(record){
       return record.genre === genre
     })
+  },
+
+  totalValueOfInventory: function(genre){
+    this.filterInventory(genre)
+    return this.valueOfCollection
   }
-
-
-  // findRecordsByGenre: function(genre){
-  //   var stringToReturn = ''
-  //   this.inventory.forEach(function(record){
-  //     if (record.genre === genre){
-  //       stringToReturn += record.printPropertiesAsString()
-  //     }
-  //   })
-  //   return stringToReturn
-  // },
-  // IMPROVE THIS BY USING FILTER ENUMERABLE. ALSO, CHANGE GENRE TO LOWERCASE.
 
   // totalValue: function(genre){
   //   if (genre === undefined){
